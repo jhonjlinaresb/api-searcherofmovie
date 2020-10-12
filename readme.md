@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 ### API-Rest Searcher of Movies
+=======
+<p align="center">
+    <h3>This is a REDME of API</h3>	
+</p>
+>>>>>>> 441d9a7c2c686fb9bc2c50e1e88da8f509f3a079
 
 Installation:
 
