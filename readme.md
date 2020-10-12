@@ -1,27 +1,38 @@
-<p align="center">
-    <img src="https://github.com/GeeksHubsAcademy/2020-geekshubs-media/blob/master/image/logo.png" >	
-</p>
+### API-Rest Searcher of Movies
 
-# Quick start
+Installation:
 
-## Run the backend
-- Convert .env.example to .env
+> npm init -y
+> npm install express mysql2 sequelize
 
-- npm install
+Create ```
+app.js
+```
+> sequelize init
 
-- npx nodemon app.js
 
-## DB
+make sure that `
+config.json
+`
 
-- sequelize db:create
-- sequelize db:migrate
+Contains the correct auth config for your mysql service sequelize 
+> model:generate --name Movie --attributes title:string,poster_path:string,overview:text,release_date:date,vote_average:float
 
-- sequelize db:seed:all
+#### Structure of database
+![](C:\Users\Jhon\Pictures\dbstructure.png)
 
-importante: cambiar la configuración de MySQL para permitir mayor max_allowed_packet en my.ini
-en windows es: C:\xampp\mysql\bin\my.ini 
+Create Database:
+> sequelize db:create
+> sequelize db:migrate
+> sequelize db:seed:all
 
-sino desde el terminal de MySQL
-mysql -u root
-seteamos:
-set global max_allowed_packet=1000000000;
+It is important to have the correct data in `
+config.json
+`
+for the configuration with the database:
+
+![](C:\Users\Jhon\Pictures\configjson.JPG)
+
+Check in the database MySQL Workbench
+
+![](C:\Users\Jhon\Pictures\dbapi.JPG)
