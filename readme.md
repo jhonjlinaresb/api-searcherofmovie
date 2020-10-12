@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/GeeksHubsAcademy/2020-geekshubs-media/blob/master/image/logo.png" >	
+    <h3>This is a REDME of API</h3>	
 </p>
 
 # Quick start
