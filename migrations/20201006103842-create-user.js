@@ -22,7 +22,6 @@ module.exports = {
             },
             token: Sequelize.STRING,
             createdAt: {
-                allowNull: false,
                 type: Sequelize.DATE
             },
             updatedAt: {
