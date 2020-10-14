@@ -20,6 +20,7 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+            confirmed: Sequelize.BOOLEAN,
             token: Sequelize.STRING,
             createdAt: {
                 type: Sequelize.DATE

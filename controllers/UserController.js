@@ -9,7 +9,7 @@ const UserController = {
     async signup(req, res) {
         try {
             req.body.password = await bcrypt.hash(req.body.password, 9);
-            req.body.confirmed = false;
+            req.body.confirmed = true;
             const user = await User.create(req.body);
             const emailToken = jwt.sign({ id: user.id }, process.env.SECRET_EMAIL_JWT, { expiresIn: '48h' })
             const emailConfirmationLink = process.env.API_URL + '/users/confirm/' + emailToken

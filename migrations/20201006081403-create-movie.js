@@ -15,14 +15,8 @@ module.exports = {
             poster_path: {
                 type: Sequelize.STRING
             },
-            overview: {
+            description: {
                 type: Sequelize.TEXT
-            },
-            release_date: {
-                type: Sequelize.DATE
-            },
-            vote_average: {
-                type: Sequelize.FLOAT
             },
             createdAt: {
                 allowNull: false,

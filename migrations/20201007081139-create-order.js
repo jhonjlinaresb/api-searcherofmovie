@@ -9,12 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.STRING
+        type: Sequelize.ENUM('alquilada', 'enviado', 'entregado')
       },
       returnDate: {
         type: Sequelize.DATE
       },
       UserId: {
+        type: Sequelize.INTEGER
+      },
+      MovieId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

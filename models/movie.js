@@ -5,23 +5,26 @@ const {
 module.exports = (sequelize, DataTypes) => {
     class Movie extends Model {
         static associate(models) {
-            this.belongsToMany(models.Actor, { through: models.ActorMovie }); //Many to Many
-            // this.belongsToMany(models.Order, { through: models.OrderMovie, foreignKey:'IdMovie' });
-            this.belongsToMany(models.Order, { through: models.OrderMovie });
+          
         }
-    };
+    }
     Movie.init({
         title: {
-            type: DataTypes.STRING,
-            allowNull: false
+          type: DataTypes.STRING,
+          allowNull: false
         },
-        poster_path: DataTypes.STRING,
-        overview: DataTypes.TEXT,
-        release_date: DataTypes.DATE,
-        vote_average: DataTypes.FLOAT
-    }, {
+        description: {
+          type: DataTypes.TEXT,
+          allowNull: false
+        },
+        poster_path: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+      },
+       {
         sequelize,
         modelName: 'Movie',
-    });
-    return Movie;
+      });
+return Movie;
 };
