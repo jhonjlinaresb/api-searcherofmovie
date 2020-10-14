@@ -1,16 +1,10 @@
 const {
-    Movie,
-    Actor
+    Movie
 } = require('../models');
 
 const MovieController = {
-
-    getAll(req, res) {
-        const query = req.query;
-        Movie.findAll({
-                limit: +query.limit,
-                include: [Actor]
-            })
+     getAll(req, res) {
+        Movie.findAll()
             .then(movies => res.send(movies))
             .catch(error => {
                 console.error(error);

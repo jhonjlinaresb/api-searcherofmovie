@@ -3,7 +3,7 @@ const {
 } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const transporter = require('../config/nodemailer');
+//const transporter = require('../config/nodemailer');
 const UserController = {
 
     async signup(req, res) {
@@ -12,8 +12,8 @@ const UserController = {
             req.body.confirmed = true;
             const user = await User.create(req.body);
             const emailToken = jwt.sign({ id: user.id }, process.env.SECRET_EMAIL_JWT, { expiresIn: '48h' })
-            const emailConfirmationLink = process.env.API_URL + '/users/confirm/' + emailToken
-            await transporter.sendMail({
+            //const emailConfirmationLink = process.env.API_URL + '/users/confirm/' + emailToken
+            /*await transporter.sendMail({
                 to: user.email,
                 subject: 'Welcome to Sequelize movies, please confirm your email ✔',
                 html: `
@@ -21,10 +21,10 @@ const UserController = {
                 <a href="${emailConfirmationLink}">Click here to confirme your email</a>
                 <span>The link above will expire in 48 hours</span>
                 `,
-            });
+            });*/
 
             res.status(201).send(user)
-        } catch (error) {
+            } catch (error) {
             console.error(error);
             res.status(500).send({
                 error,
