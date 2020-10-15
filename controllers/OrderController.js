@@ -38,9 +38,9 @@ const OrderController = {
             const order = await Order.create({
                 status: 'Alquilada',
                 returnDate,
-                UserId: req.user.id
+                UserId: req.user.id,
+                MovieId: req.body.MovieId
                 });
-                await order.addMovie(req.body.Movies);
                 res.send ({
                     message: 'Added successfully in your order'
                 }); 
