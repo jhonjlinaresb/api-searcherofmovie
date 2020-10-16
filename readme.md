@@ -1,13 +1,22 @@
 ### API-Rest Searcher of Movies
 
+#### Link:
+https://api-searcherofmovie.herokuapp.com/
+
+#### Technologies used:
+-Java ES6
+-NodeJS (Express, Sequelize, MySQL2)
+-MySQL
+-Heroku
+
 Installation:
 
 > npm init -y
 > npm install express mysql2 sequelize
 
-Create ```
+Create `
 app.js
-```
+`
 > sequelize init
 
 

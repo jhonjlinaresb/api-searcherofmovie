@@ -11,7 +11,7 @@ const UserController = {
             req.body.password = await bcrypt.hash(req.body.password, 9);
             req.body.confirmed = true;
             const user = await User.create(req.body);
-            const emailToken = jwt.sign({ id: user.id }, process.env.SECRET_EMAIL_JWT, { expiresIn: '48h' })
+            // const emailToken = jwt.sign({ id: user.id }, process.env.SECRET_EMAIL_JWT, { expiresIn: '48h' })
             //const emailConfirmationLink = process.env.API_URL + '/users/confirm/' + emailToken
             /*await transporter.sendMail({
                 to: user.email,
